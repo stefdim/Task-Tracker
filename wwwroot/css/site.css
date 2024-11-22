@@ -1,0 +1,106 @@
+/* Global styles for the page */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* General layout settings */
+body {
+    margin-bottom: 60px;
+    background: linear-gradient(320deg, grey, black);
+    color: white; /* Set text color to white for the body */
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: black !important;
+    
+}
+
+.navbar a{
+    color: rgb(214, 214, 214) !important; 
+    
+}
+    .navbar a:hover, .navbar a:focus {
+        color: royalblue !important; /* Slightly different shade on hover/focus */
+    }
+
+    .navbar-brand{
+        font-weight:bold;
+        font-size:25px;
+    }
+/* Footer styles */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center; /* Center text horizontally in the footer */
+    color: rgb(214, 214, 214)!important ;/* Footer text color */
+}
+
+/* Table styles */
+table {
+    color: white !important; /* Ensure table text is white */
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse; /* For cleaner look */
+}
+
+    table th, table td {
+        padding: 10px;
+        color: white !important; /* Ensure both header and cell text are white */
+        border-top: 1px solid #444; /* Subtle border for table rows */
+    }
+
+    table th {
+        background-color: #333; /* Dark background for table headers */
+        text-align: left;
+    }
+
+    /* Table links color */
+    table a {
+        color: lightgreen !important; /* Ensure links inside the table and general links are white */
+        text-decoration: none;
+    }
+    table a:last-child{
+        color:red !important;
+    }
+
+        table a:hover, table a:focus, a:hover, a:focus {
+            color: #dddddd !important; /* Light gray on hover/focus */
+            text-decoration: underline; /* Add underline for hover/focus */
+        }
+
+/* Button and input styling */
+.btn, .form-control {
+    color: white;
+}
+
+.btn {
+    background-color: rgb(103, 103, 103, 0.95);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+    .btn:hover, .btn:focus {
+        background-color: #1a6db1;
+    }
+
+.form-control {
+    background-color: #444;
+    border: 1px solid #666;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+    .form-control:focus {
+        background-color: #555;
+    }
