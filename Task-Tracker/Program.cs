@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 
 
-/*
-ΝΑ ΤΣΕΚΑΡΩ ΓΙΑ DUPLICATES ΚΑΤΑ ΤΟ UPDATE
-NA ΠΡΟΣΕΞΩ ΓΙΑ CASE-SENCESETIVE/ΚΕΝΟ η ΝΑΛΛ ΟΤΑΝ ΔΙΝΩ ΤΑΣΚ
-ΚΑΙ ΝΑ ΚΟΙΤΑΞΩ ΤΙ ΜΠΟΡΩ ΝΑ ΚΑΝΩ ΣΕ ΠΕΡΙΠΤΩΣΗ ΠΟΥ ΤΟ ΑΡΧΕΙΟ ΕΙΝΑΙ ΑΝΟΙΧΤΟ ΚΑΠΟΥ ΑΛΛΟΥ ΕΝΩ ΤΟ ΠΡΟΓΡΑΜΜΑ ΤΡΕΧΕΙ ΚΑΙ ΓΙΝΕΙ ΚΑΠΟΙΑ ΑΛΛΑΓΗ (check ChatGPT)
-  */
+
 
 
 namespace Task_Tracker
