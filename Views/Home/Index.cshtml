@@ -1,10 +1,20 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<div class="home-body">
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Register or Login for full functionality.</p>
-    <h3>Navigation</h3>
-    <p>Go to Tasks to see all tasks. You may Edit/Delete or see their details (Description and Status)<br/>You may also search by description or staus in search area</p>
+	<h1 class="display-4">Welcome</h1>
+    
+        <p>
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a> or  <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a> for full functionality.
+        <br />Go to Tasks to see all tasks. You may Edit/Delete or see their details (Description and Status)<br />
+        You may also search by description or status in search area</p>
+</div>
+
+<div class="nav-functionality-btn">
+
+    <button class="home-page-navBtn"><a asp-controller="ToDoes" asp-action="Create">Create New</a></button>
+    <button class="home-page-navBtn"><a asp-area="" asp-controller="ToDoes" asp-action="Index">Display all Tasks</a></button>
+</div>
+
 </div>

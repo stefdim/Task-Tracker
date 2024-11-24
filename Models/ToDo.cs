@@ -14,11 +14,14 @@
 
         public string Description { get; set; }
 
-        public Status TaskStatus { get; set; }
+        public Status? TaskStatus { get; set; }
 
         public ToDo()
         {
-            TaskStatus = Status.Pending;
+            
+           
+                TaskStatus = Status.Pending;
+            
         }
 
     }
