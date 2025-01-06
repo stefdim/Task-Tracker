@@ -4,40 +4,88 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>To-Do Tasks</h1>
+<h1 class="text-center text-light my-4">To-Do Tasks</h1>
 
-
-<p>
-    <p>Register or Login in order to create a new one!</p>
-    <a asp-action="Create" style="color:blue !important;">Create New</a>
+<p class="text-center text-light mb-4">
+    Register or Login to create a new task!
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TaskStatus)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TaskStatus)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+
+<div class="text-center mb-3">
+    <a asp-action="Create" class="btn btn-success">
+        <i class="fas fa-plus"></i> Create New
+    </a>
+</div>
+
+<div class="card shadow p-4 bg-dark text-light">
+    <h4 class="text-secondary">Task List</h4>
+    <hr />
+    <table class="table table-striped table-hover text-light">
+        <thead class="thead-dark">
+            <tr>
+                <th class="text-light">@Html.DisplayNameFor(model => model.Description)</th>
+                <th class="text-light">@Html.DisplayNameFor(model => model.TaskStatus)</th>
+                <th class="text-center text-light">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="3" class="text-center text-muted">No tasks available. Please create a new one!</td>
+                </tr>
+            }
+            else
+            {
+                @foreach (var item in Model)
+                {
+                    <tr class="hover-row">
+                        <td class="text-light">@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td class="text-light">@Html.DisplayFor(modelItem => item.TaskStatus)</td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm text-warning border-0 hover-effect">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm text-info border-0 hover-effect">
+                                <i class="fas fa-info-circle"></i> Details
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm text-danger border-0 hover-effect">
+                                <i class="fas fa-trash-alt"></i> Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
-    </tbody>
-</table>
+
+<style>
+    /* Table Row Hover Effect */
+    .table-hover tbody tr {
+        transition: all 0.3s ease; /* Smooth transition */
+    }
+
+        .table-hover tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Light highlight */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Depth on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+    /* Focused and Active Row Effects */
+    .hover-row:focus, .hover-row:active {
+        background-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow when focused */
+        transform: translateY(-3px); /* Slightly stronger lift */
+    }
+
+    /* Optional: Adding a soft border for more distinction */
+    .table tbody tr {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+</style>

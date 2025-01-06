@@ -1,20 +1,32 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+
 <div class="home-body">
-<div class="text-center">
-	<h1 class="display-4">Welcome</h1>
-    
+    <div class="text-center">
+        <h1 class="display-4">Welcome to the To-Do Tracker</h1>
+        <p class="lead">
+            Manage your tasks efficiently with our simple and intuitive platform.
+        </p>
+    </div>
+
+    <div class="text-center mt-4">
         <p>
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a> or  <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a> for full functionality.
-        <br />Go to Tasks to see all tasks. You may Edit/Delete or see their details (Description and Status)<br />
-        You may also search by description or status in search area</p>
-</div>
+            <strong>New here?</strong> <a class="text-primary" asp-area="Identity" asp-page="/Account/Register">Register</a> to get started.
+            Already a member? <a class="text-primary" asp-area="Identity" asp-page="/Account/Login">Login</a> for full functionality.
+        </p>
+        <p>
+            Access your tasks, view details, or perform actions like <strong>Edit</strong> or <strong>Delete</strong>.
+            Use the search feature to find tasks by <strong>Description</strong> or <strong>Status</strong>.
+        </p>
+    </div>
 
-<div class="nav-functionality-btn">
-
-    <button class="home-page-navBtn"><a asp-controller="ToDoes" asp-action="Create">Create New</a></button>
-    <button class="home-page-navBtn"><a asp-area="" asp-controller="ToDoes" asp-action="Index">Display all Tasks</a></button>
-</div>
-
+    <div class="d-flex justify-content-center mt-5">
+        <a class="btn btn-primary me-3" asp-controller="ToDoes" asp-action="Create">
+            <i class="fas fa-plus-circle"></i> Create New Task
+        </a>
+        <a class="btn btn-secondary" asp-area="" asp-controller="ToDoes" asp-action="Index">
+            <i class="fas fa-tasks"></i> View All Tasks
+        </a>
+    </div>
 </div>
